@@ -1,0 +1,7 @@
+#guess-list {
+	display: block;
+}
+
+#guess-list li {
+	display: inline;
+}
