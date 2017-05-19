@@ -1,0 +1,22 @@
+header {
+	margin-top: 30px;
+	/*margin-left: 50px;*/
+	text-align: right;
+}
+
+h1 {
+	text-align: center;
+	/*margin-top: 60px;*/
+	color: white;
+	font-family: 'Poppins', sans-serif;
+	font-size: 40px;
+	margin-bottom: 10px;
+}
+
+#red {
+	color: #EC644B;
+}
+
+#blue {
+	color: #52B3D9;
+}

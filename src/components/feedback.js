@@ -1,15 +1,17 @@
 import React from 'react';
 
-import guessForm from './guess-form';
+import GuessForm from './guess-form';
 
 import './feedback.css';
 
 
-export default function feedback(props) {
+export default function FeedBack(props) {
+	console.log(props);
 	return (
+	
 		<section>
 			<h2 id="feedback">{props.feedback}</h2>
-			<guessForm onGuess={props.onGuess} />
+			<GuessForm onGuess={props.onGuess} />
 		</section>	
 
 	);

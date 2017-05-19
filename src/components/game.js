@@ -1,16 +1,17 @@
 import React from 'react';
 
-import newGame from './new-game';
-import guessCount from './guess-count';
-import guessList from './guess-list';
-import feedback from './feedback';
+import Header from './header';
+
+import GuessCount from './guess-count';
+import GuessList from './guess-list';
+import FeedBack from './feedback';
 
 export default class Game extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
 			guesses: [],
-			feedback: 'Make your guess!',
+			feedback: 'I am thinking of a number between 1 and 100...',
 			correctAnswer: Math.round(Math.random() * 100)
 
 		};
@@ -19,7 +20,7 @@ export default class Game extends React.Component {
 	newGame() {
 		this.setState({
 			guesses: [],
-			feedback: 'Make your guess!',
+			feedback: 'I am thinking of a number between 1 and 100...',
 			correctAnswer: Math.round(Math.random() * 100)
 		});
 	}
@@ -35,6 +36,8 @@ export default class Game extends React.Component {
 	
 		const difference = Math.abs(guess - this.state.correctAnswer);
 
+		// const fire = <i class="em em-some-emoji"></i>
+
 		let feedback;
 		if (difference >= 50) {
 			feedback = 'Brrrr that\'s cold';
@@ -49,7 +52,7 @@ export default class Game extends React.Component {
 			feedback = 'Feelin hot, hot, hot!';
 		}
 		else {
-			feedback = 'Someone call the fire dept! You got it!';
+			feedback = 'You got it!';
 		}
 
 		this.setState({
@@ -60,13 +63,17 @@ export default class Game extends React.Component {
 
 	render() {
 		return (
+
 			<div>
-				<newGame onClick={() => this.newGame()}/>
-				<feedback feedback={this.state.feedback}
-					onGuess={(guess) => this.guess(guess)} />
-				<guessCount count={this.state.guesses.length} />
-				<guessList guesses={this.state.guesses} />
+				<Header onNewGame={() => this.newGame()}/>
+				<FeedBack feedback={this.state.feedback}
+                    onGuess={(guess) => this.guess(guess)}/>
+                <GuessCount count={this.state.guesses.length}/>
+				<GuessList  guesses={this.state.guesses}/>
+				
 			</div>		
 		);
 	}
 }
+
+

@@ -1,7 +1,15 @@
 #guess-list {
 	display: block;
+	text-align: center;
 }
 
 #guess-list li {
 	display: inline;
+	text-align: center;
+	font-family: 'Poppins', sans-serif;
+	color: white;
+	padding: 10px;
+	font-size: 20px;
+
 }
+
