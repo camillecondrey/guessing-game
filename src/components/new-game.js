@@ -2,13 +2,24 @@ import React from 'react';
 
 import './new-game.css';
 
+import {newGame} from '../actions';
 
-export default class NewGame extends React.Component {
+import {connect} from 'react-redux';
+
+
+export class NewGame extends React.Component {
+	constructor(props) {
+	super(props)
+	this.onNewGame = this.onNewGame.bind(this)
+	}
+
+
+
 	onNewGame(event) {
+		console.log("test");
 	        event.preventDefault();
-	        if (this.props.onNewGame) {
-	            this.props.onNewGame();
-	        }
+	        this.props.dispatch(newGame());
+	        
 	    }
 
 	render(){
@@ -19,3 +30,5 @@ export default class NewGame extends React.Component {
 			);
 		}
 	};
+
+export default connect()(NewGame);

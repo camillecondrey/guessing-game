@@ -10,8 +10,6 @@ export default function Header(props) {
 			<h1>Are you <span id="red">Hot</span> or <span id="blue">Cold?</span></h1>
 		</header>	
 		);
-
-
 };
 
 

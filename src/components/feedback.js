@@ -2,10 +2,12 @@ import React from 'react';
 
 import GuessForm from './guess-form';
 
+import {connect} from 'react-redux';
+
 import './feedback.css';
 
 
-export default function FeedBack(props) {
+export function FeedBack(props) {
 	console.log(props);
 	return (
 	
@@ -16,3 +18,9 @@ export default function FeedBack(props) {
 
 	);
 }
+
+const mapStateToProps = state => ({
+	feedback: state.feedback
+});
+
+export default connect(mapStateToProps)(FeedBack);
